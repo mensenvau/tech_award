@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 const { Builder, Browser, By, Key, until } = require('selenium-webdriver');
-const { insertQuery } = require('../database/mysql');
+const { insertQuery } = require('../back-end/database/mysql');
 require('selenium-webdriver/chrome');
 require('chromedriver').path;
 
@@ -10,7 +10,7 @@ let start = async () => {
 
     for (let i = 0; i < 100; i = i + 10) {
         try {
-            await driver.get(`https://www.indeed.com/jobs?q=SQL&l=&vjk=7e011c44a8fee4ec&start=${i}`);
+            await driver.get(`https://www.indeed.com/jobs?q=Go&l=&vjk=7e011c44a8fee4ec&start=${i}`);
 
             let arr = await driver.executeScript(`
                 {   let arr = [];
