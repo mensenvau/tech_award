@@ -1,49 +1,48 @@
+"use client"
 
-import * as React from "react"
+import { useState } from "react";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { SkeletonDemo } from "@/app/components/skeleton";
+import EducationPage from "./education";
+import BasicPage from "./basic";
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, } from "@/components/ui/select"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 
 export default function Resume() {
+
+    let [page, setPage] = useState(0);
+    let [load, setLoad] = useState(false);
+
+    let tabs = [<BasicPage />, <EducationPage />]
+
+    let nextPage = () => {
+        setLoad(true);
+        if (page + 1 < tabs.length) setPage(page + 1);
+        setLoad(false);
+    }
+
+    let backPage = () => {
+        setLoad(true);
+        if (page - 1 >= 0) setPage(page - 1);
+        setLoad(false);
+    }
+
     return (
         <div className="w-full flex justify-center">
             <Card className="sm:w-full sm:w-8/12">
-                <CardHeader>
-                    <CardTitle>Create project</CardTitle>
-                    <CardDescription>Deploy your new project in one-click.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <form>
-                        <div className="grid w-full items-center gap-4">
-                            <div className="flex flex-col space-y-1.5">
-                                <Label htmlFor="name">Name</Label>
-                                <Input id="name" placeholder="Name of your project" />
-                            </div>
-                            <div className="flex flex-col space-y-1.5">
-                                <Label htmlFor="framework">Framework</Label>
-                                <Select>
-                                    <SelectTrigger id="framework">
-                                        <SelectValue placeholder="Select" />
-                                    </SelectTrigger>
-                                    <SelectContent position="popper">
-                                        <SelectItem value="next">Next.js</SelectItem>
-                                        <SelectItem value="sveltekit">SvelteKit</SelectItem>
-                                        <SelectItem value="astro">Astro</SelectItem>
-                                        <SelectItem value="nuxt">Nuxt.js</SelectItem>
-                                    </SelectContent>
-                                </Select>
-                            </div>
-                        </div>
-                    </form>
-                </CardContent>
+                {/* tabs */}
+                {page >= 0 && page <= tabs.length && tabs[page]}
+                {load && <SkeletonDemo />}
+
                 <CardFooter className="flex justify-between">
-                    <Button variant="outline">Cancel</Button>
-                    <Button>Deploy</Button>
+                    <Button onClick={backPage} variant="outline" >Back</Button>
+                    <Button onClick={nextPage}>Next</Button>
                 </CardFooter>
             </Card>
         </div>
     )
+
+
 }
+
+

@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata = {
   title: 'SMARTJOB',
-  description: 'Easy with us - SMARTJOB.',
+  description: 'Explore thousands of job opportunities on SmartJob\'s Vacancies Module.Our intelligent matching system and advanced search filters make it easier for both job seekers and employers to find the right match.Find your next career move with us today'
 }
 
 export default function RootLayout({ children }) {
