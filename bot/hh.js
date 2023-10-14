@@ -47,7 +47,6 @@ let start = async () => {
                     try {
                         let { name, country, details, info, link, source } = data
                         let ins = await insertQuery("INSERT INTO jobs_list(name,country,details,info,link,source) VALUES (?,?,?,?,?,?)", [name, country, details, info, link, source])
-
                         try {
                             let keys = data.keys
                             console.log(keys, ins.insertId)
