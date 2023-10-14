@@ -4,10 +4,8 @@ export default function Footer() {
     return (
         <footer >
 
-            <div>
-                <script type="text/javascript" src="https://www.counters-free.net/count/d5rc"></script>
-                <br />
-                <a href='http://www.freevisitorcounters.com'>Free Counter</a> <script type='text/javascript' src='https://whomania.com/ctr?id=ea5cba5d3a493d5856cc8274ccd26b31a3135ba5'></script>
+            <div className='fixed bottom-0 left-0'>
+                <a href="https://info.flagcounter.com/gpBw"><img src="https://s11.flagcounter.com/count2/gpBw/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0" /></a>
             </div>
 
             <div className='my-auto mx-auto	 container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0 '>
