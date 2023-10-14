@@ -7,7 +7,7 @@ const { notFoundPage } = require('./database/message');
 require('dotenv').config()
 
 app.use(cors({
-    origin: ["https://smartjob.uz", "http://localhost:3000", "http://localhost:3001", "https://smartjob.datatech.uz/", "http://localhost:6003",],
+	origin: ["https://smartjob.uz", "http://localhost:3000", "http://localhost:3001", "https://smartjob.datatech.uz", "http://localhost:6003",],
     optionsSuccessStatus: 200
 }));
 
