@@ -39,7 +39,6 @@ class MySQL {
         try {
             return (await this.pool.query(query, params))[0];
         } catch (err) {
-            console.log(err);
             throw new Error("Server error, MYSQL has an error!, " + err.message);
         }
     }

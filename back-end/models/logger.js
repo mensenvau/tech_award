@@ -5,11 +5,11 @@ class Logger {
     }
 
     log(message, tag = "smartjob") {
-        console.log(`[${chalk.blue(tag)}]:`, chalk.yellow(message))
+        console.log(tag, ":", message)
     }
 
     error(message, tag = "smartjob") {
-        console.log(`[${chalk.blue(tag)}]:`, chalk.red(message))
+        console.log(tag, ":", message)
     }
 }
 

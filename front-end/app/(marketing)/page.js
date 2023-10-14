@@ -27,13 +27,15 @@ export default function Home() {
               <p className="mt-6 text-lg leading-8 dark:text-slate-300 text-gray-600">
                 Smart Jobs sizga ish joyingizni topishda ko’maklashadi.
               </p>
-              <div className="mt-10 w-11/12 flex items-center justify-center gap-x-6">
-                <div className="flex w-10/12 max-w-sm items-center space-x-2">
-                  <Input type="email" placeholder="Email" />
-                  <Button type="submit">Subscribe</Button>
-                </div>
+            </div>
+
+            <div className="mt-10 w-full flex items-center justify-center gap-x-6">
+              <div className="flex w-11/12 items-center space-x-2">
+                <Input type="email" placeholder="Lavozim yoki komyaniyani kiriting" />
+                <Button type="submit">Subscribe</Button>
               </div>
             </div>
+
           </div>
         </div>
       </div>
