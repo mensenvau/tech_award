@@ -1,7 +1,7 @@
 import { ProblemsList } from "./list"
 
 export const metadata = {
-    title: 'Problems - MYCONTEST',
+    title: 'Problems - SMARTJOB',
     description: 'Theory without practice is empty; Practice without theory is blind.'
 }
 

@@ -1,9 +1,9 @@
 export const metadata = {
-    title: 'About Us - SMARTJOB',
+    title: 'Integration - SMARTJOB',
     description: 'Theory without practice is empty; Practice without theory is blind.'
 }
 
-export default function AboutUs() {
+export default function Integration() {
     return (
         <>
             <div className=" light:bg-white py-24 sm:py-32">

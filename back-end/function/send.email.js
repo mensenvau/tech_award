@@ -178,7 +178,7 @@ let emailSendAuth = (email) => {
                   >
                     <p style="margin-bottom;: 10px">Dear ${email} </p>
                     <p style="margin: 0">
-                      Welcome to SMART JOB! We're excited to have you on board. To
+                      Welcome to SMARTJOB! We're excited to have you on board. To
                       get started, please verify your email address by clicking the
                       button below:
                     </p>
@@ -230,12 +230,12 @@ let emailSendAuth = (email) => {
                       you updated about important notifications.
                     </p>
                     <p style="margin: 0">
-                      If you did not sign up for SMART JOB, you can simply ignore
+                      If you did not sign up for SMARTJOB, you can simply ignore
                       this email.
                     </p>
                     <p style="margin-bottom;: 10px">Thank you for joining us!</p>
                     <p style="margin-bottom;: 10px">Best regards,</p>
-                    <p style="margin: 0">The SMART JOB Team</p>
+                    <p style="margin: 0">The SMARTJOB Team</p>
                   </td>
                 </tr> 
               </table> 
@@ -264,13 +264,13 @@ let emailSendAuth = (email) => {
                     <a
                       target="_blank"
                       style="color: #666; text-decoration: underline"
-                      href="https://mycontest.dev/terms"
+                      href="${process.env.FRONT_END}/terms"
                       rel="noopener noreferrer"
                       >Terms of Service </a
                     >|<a
                       target="_blank"
                       style="color: #666; text-decoration: underline"
-                      href="https://mycontest.dev/privacy"
+                      href="${process.env.FRONT_END}/privacy"
                       rel="noopener noreferrer"
                       >Privacy Policy</a
                     >

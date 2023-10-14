@@ -7,7 +7,7 @@ import { siteConfig } from "@/config/site"
 import { ChevronLeftIcon } from "@heroicons/react/24/outline"
 
 export const metadata = {
-    title: "Login - MYCONTEST",
+    title: "Login - SMARTJOB",
     description: "Login to your account",
 }
 

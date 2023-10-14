@@ -3,8 +3,8 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
 export const metadata = {
-    title: 'Privacy Policy - MYCONTEST',
-    description: 'The Privacy Policy for MYCONTEST.'
+    title: 'Privacy Policy - SMARTJOB',
+    description: 'The Privacy Policy for SMARTJOB.'
 }
 
 export default function PrivacyPage() {

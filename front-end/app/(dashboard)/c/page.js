@@ -52,7 +52,7 @@ export default function Dashboard() {
             <div className="relative lg:col-span-4 col-span-1">
                 <Card className="shadow-none">
                     <CardHeader>
-                        <CardTitle>Mycontest Start #1</CardTitle>
+                        <CardTitle>SMARTJOB Start #1</CardTitle>
                         <CardDescription className="dark:text-white">Developer.UZ</CardDescription>
                     </CardHeader>
                 </Card>

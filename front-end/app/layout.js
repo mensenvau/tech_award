@@ -6,8 +6,8 @@ import './assets/style/globals.css'
 import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata = {
-  title: 'MYCONTEST',
-  description: 'Easy with us - MYCONTEST.',
+  title: 'SMARTJOB',
+  description: 'Easy with us - SMARTJOB.',
 }
 
 export default function RootLayout({ children }) {

@@ -21,7 +21,7 @@ export default function Home() {
           <div className="mx-auto max-w-2xl py-20 sm:py-35 lg:py-40">
             <div className="text-center">
               <h1 className="text-4xl font-bold tracking-tight dark:text-white-600 sm:text-5xl">
-                Code, Interview, and Learn together with MYCONTEST
+                Code, Interview, and Learn together with SMARTJOB
               </h1>
               <p className="mt-6 text-lg leading-8 dark:text-slate-300 text-gray-600">
                 We help companies develop the strongest tech teams around. We help candidates sharpen their tech skills and pursue job opportunities.
