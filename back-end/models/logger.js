@@ -1,4 +1,4 @@
-let chalk = require('chalk');
+
 
 class Logger {
     constructor() {
