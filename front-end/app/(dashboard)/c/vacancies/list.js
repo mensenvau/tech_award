@@ -58,7 +58,7 @@ export default function Home() {
                 <div className="w-full p-4">
                     <h1 className="text-2xl font-bold mb-4">Job Vacancies</h1>
                     <div className="my-10 w-full flex items-center justify-center gap-x-6">
-                        <div className="flex grid-cols-2 w-full items-center space-x-2">
+                        <div className="w-full flex md:items-center md:flex-row flex-col md:space-x-2 space-y-2">
                             <Input
                                 id="q"
                                 type="email"
@@ -86,7 +86,7 @@ export default function Home() {
                             <Button className="h-12 drop-shadow-md" onClick={Search} > <MagnifyingGlassIcon className="w-4 w-4 mr-2" /> Search </Button>
                         </div>
                     </div>
-                    {load && (<div className="grid grid-cols-2 gap-4">
+                    {load && (<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {data.map(job => (
                             <Card key={job.id} id={job.id} onClick={() => { GoPage(job.id) }} >
                                 <CardHeader>

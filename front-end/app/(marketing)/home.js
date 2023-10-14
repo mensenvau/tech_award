@@ -37,8 +37,8 @@ export default function HomePage() {
                             </p>
                         </div>
 
-                        <div className="mt-10 w-full flex items-center justify-center gap-x-6">
-                            <div className="flex grid-cols-2 w-11/12 items-center space-x-2">
+                        <div className="mt-10 w-full flex items-center justify-center gap-x-2 sm:gap-x-6">
+                            <div className="w-full flex md:items-center md:flex-row flex-col md:space-x-2">
                                 <Input
                                     id="q"
                                     placeholder="Enter the position or position"
@@ -50,7 +50,7 @@ export default function HomePage() {
                                         }
                                     }}
                                 />
-                                <Button type="submit" className="h-12 drop-shadow-md" onClick={GoSearch}> <MagnifyingGlassIcon className="w-4 w-4 mr-2" /> Search </Button>
+                                <Button type="submit" className="h-12 drop-shadow-md mt-2 sm:mt-0" onClick={GoSearch}> <MagnifyingGlassIcon className="w-4 w-4 mr-2" /> Search </Button>
                             </div>
                         </div>
                     </div>

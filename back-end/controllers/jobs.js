@@ -3,7 +3,6 @@ const { getRow, getOneRow } = require("../database/mysql");
 
 let getJobs = async (req, res, next) => {
     try {
-        console.log(req.query);
         let q = `%${req.query.q || ''}%`
         let env = req.query.env
         if (env == 'all')
