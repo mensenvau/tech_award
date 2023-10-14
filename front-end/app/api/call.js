@@ -18,11 +18,13 @@ class CallApi {
             });
 
             if (!res.ok) {
-                throw new Error("ERROR CODE 2002, msg:" + err.message);
+                // throw new Error("ERROR CODE 2002, msg:" + err.message);
+                console.log(err.message)
             }
             return await res.json();
         } catch (err) {
-            throw new Error("ERROR CODE 2001, msg:" + err.message);
+            console.log(err.message)
+            // throw new Error("ERROR CODE 2001, msg:" + err.message);
         }
     }
 
@@ -36,11 +38,13 @@ class CallApi {
             });
 
             if (!res.ok) {
-                throw new Error("ERROR CODE 2002, msg:" + err.message);
+                // throw new Error("ERROR CODE 2002, msg:" + err.message);
+                console.log(err.message)
             }
             return await res.json();
         } catch (err) {
-            throw new Error("ERROR CODE 2002, msg:" + err.message)
+            // throw new Error("ERROR CODE 2002, msg:" + err.message);
+            console.log(err.message)
         }
     }
 }
