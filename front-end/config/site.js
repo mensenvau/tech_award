@@ -3,7 +3,7 @@ export const siteConfig = {
     name: "SMARTJOB",
     description: "SMARTJOB",
     // apiURL: "https://api.mycontest.dev/",
-    apiURL: "http://localhost:6001/",
+    apiURL: "http://sm-api.datatech.uz:6002/",
     email: {
         support: 'support@mycontest.dev',
     },

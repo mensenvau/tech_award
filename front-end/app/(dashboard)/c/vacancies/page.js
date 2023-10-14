@@ -1,5 +1,5 @@
 import { VacanciesFunc } from "./list"
-import Home from "./test"
+import Home from "./list"
 
 export const metadata = {
     title: 'Vacancies - SMARTJOB',

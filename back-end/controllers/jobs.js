@@ -3,9 +3,14 @@ const { getRow, getOneRow } = require("../database/mysql");
 
 let getJobs = async (req, res, next) => {
     try {
-        console.time();
-        res.success({ contests: await getRow("SELECT * FROM jobs_list") });
-        console.timeEnd();
+        console.log(req.query);
+        let q = `%${req.query.q || ''}%`
+        let env = req.query.env
+        if (env == 'all')
+            return res.success({ jobs: await getRow("SELECT id,name,info,country FROM jobs_list WHERE name like ? LIMIT 100", [q]) });
+
+        res.success({ jobs: await getRow("SELECT id,name,info,country FROM jobs_list WHERE name like ? and source = ? LIMIT 100", [q, env]) });
+
     } catch (err) {
         return next(err);
     }
@@ -14,12 +19,12 @@ let getJobs = async (req, res, next) => {
 let getJobsWithId = async (req, res, next) => {
     try {
         let cid = req.params.cid;
-        let [contest] = await Promise.all([
+        let [jobs] = await Promise.all([
             getOneRow("SELECT * FROM jobs_list WHERE id = ?", [cid]),
         ]);
 
-        if (!contest) throw new Error(contestIDError);
-        res.success({ contest });
+        if (!jobs) throw new Error(contestIDError);
+        res.success({ jobs });
     } catch (err) {
         return next(err);
     }
