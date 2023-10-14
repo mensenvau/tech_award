@@ -1,5 +1,7 @@
 export const navigation = [
-    { name: 'Jobs', href: '/c/jobs' },
-    { name: 'About Us', href: '/c/about' },
-    { name: 'Integration', href: '/c/integration' },
+    { name: 'Vacancies', href: '/c/vacancies' },
+    { name: 'Resume constructor', href: '/c/resume' },
+    { name: 'Mock interview', href: '/c/interview' },
+    { name: 'Career research', href: '/c/career' },
+    { name: 'Blog', href: '/c/blog' },
 ]
