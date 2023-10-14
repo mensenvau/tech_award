@@ -17,10 +17,12 @@ let getJobs = async (req, res, next) => {
 
 let getJobsWithId = async (req, res, next) => {
     try {
-        let cid = req.params.cid;
+        let id = req.params.id;
         let [jobs] = await Promise.all([
-            getOneRow("SELECT * FROM jobs_list WHERE id = ?", [cid]),
+            getOneRow("SELECT * FROM jobs_list WHERE id = ?", [id]),
         ]);
+
+        console.log(jobs, id);
 
         if (!jobs) throw new Error(jobsIDError);
         res.success({ jobs });

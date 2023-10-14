@@ -79,3 +79,12 @@
      @apply bg-background text-foreground;
    }
  }
+
+
+ svg {
+   width: 10px
+ }
+
+ .jobsearch-JobDescriptionSection-title {
+   display: none;
+ }

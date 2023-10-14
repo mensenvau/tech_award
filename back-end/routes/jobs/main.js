@@ -6,6 +6,6 @@ const { getJobs, getJobsWithId } = require('../../controllers/jobs');
 
 // GET 
 router.get("/list", getJobs)
-router.get("/list/:pid", getJobsWithId)
+router.get("/list/:id", getJobsWithId)
 
 module.exports = router; 
