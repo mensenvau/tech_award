@@ -18,7 +18,7 @@ export default function DashboardRootLayout({ children }) {
     return (
         <>
             <Header />
-            <Conatiner className="py-7 min-h-[80vh]">
+            <Conatiner className="py-7 min-h-[80vh] px-0 sm:px-7">
                 {confirm != 1 && <EmailConfirm />}
                 {children}
             </Conatiner>

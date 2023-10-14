@@ -9,8 +9,8 @@ import { Label } from "@/components/ui/label"
 
 export default function Resume() {
     return (
-        <div className="w-full	flex justify-center">
-            <Card className="sm:w-full md:w-8/12">
+        <div className="w-full flex justify-center">
+            <Card className="sm:w-full sm:w-8/12">
                 <CardHeader>
                     <CardTitle>Create project</CardTitle>
                     <CardDescription>Deploy your new project in one-click.</CardDescription>
