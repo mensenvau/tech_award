@@ -1,4 +1,4 @@
-const { contestIDError } = require("../database/message");
+const { jobsIDError } = require("../database/message");
 const { getRow, getOneRow } = require("../database/mysql");
 
 let getJobs = async (req, res, next) => {
@@ -22,7 +22,7 @@ let getJobsWithId = async (req, res, next) => {
             getOneRow("SELECT * FROM jobs_list WHERE id = ?", [cid]),
         ]);
 
-        if (!jobs) throw new Error(contestIDError);
+        if (!jobs) throw new Error(jobsIDError);
         res.success({ jobs });
     } catch (err) {
         return next(err);

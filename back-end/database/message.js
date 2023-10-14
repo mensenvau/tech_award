@@ -8,7 +8,7 @@ module.exports = {
     alreadyRMessage: "This email has already been registered.",
     validationEmail: "Email has been sent, please check your inbox, if not, you may find it in spam.",
     alreadyEMessage: "This email already verified.",
-    problemIDError: "Sorry problem id error.",
-    contestIDError: "Sorry contest id error.",
+    genIDError: "Sorry id error.",
+    jobsIDError: "Sorry jobs id error.",
 
 }

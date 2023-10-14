@@ -9,5 +9,7 @@ app.use("/auth", require("./auth/main"))
 
 // next part!
 app.use("/jobs", require("./jobs/main"))
+app.use("/career", require("./career/main"))
+
 
 module.exports = app; 
