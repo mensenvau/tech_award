@@ -1,5 +1,5 @@
 const { genIDError } = require("../database/message");
-const { getRow } = require("../database/mysql");
+const { getRow, getOneRow } = require("../database/mysql");
 
 let getCareerInfo = async (req, res, next) => {
     try {
@@ -13,6 +13,25 @@ let getCareerInfo = async (req, res, next) => {
     }
 }
 
+
+let getCareerWithId = async (req, res, next) => {
+    try {
+        let id = req.params.id;
+        let [info, faq, link, skills, areas] = await Promise.all([
+            getOneRow("SELECT * FROM gen_job_info WHERE id = ?", [id]),
+            getRow("SELECT * FROM gen_job_faq WHERE job_id = ?", [id]),
+            getRow("SELECT * FROM gen_job_link WHERE job_id = ?", [id]),
+            getRow("SELECT * FROM gen_job_skills WHERE job_id = ?", [id]),
+            getRow("SELECT * FROM gen_work_areas WHERE job_id = ?", [id]),
+        ]);
+
+        if (!info) throw new Error(genIDError);
+        res.success({ info, faq, link, skills, areas });
+    } catch (err) {
+        return next(err);
+    }
+}
+
 module.exports = {
-    getCareerInfo
+    getCareerInfo, getCareerWithId
 }

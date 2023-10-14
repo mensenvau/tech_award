@@ -70,7 +70,7 @@ export default function Career() {
                     </div>
                     {load && (<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {data.map(job => (
-                            <Card key={job.id} id={job.id} onClick={() => { GoPage(job.id) }} >
+                            <Card key={job.id} id={job.id} onClick={() => { GoPage(job.id) }} className="cursor-pointer" >
                                 <CardHeader>
                                     <CardTitle> {job.job_name}</CardTitle>
                                     <CardDescription>{job.truncated_job_details}</CardDescription>

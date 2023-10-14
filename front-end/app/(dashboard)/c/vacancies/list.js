@@ -90,7 +90,7 @@ export default function Vacancies() {
                     </div>
                     {load && (<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {data.map(job => (
-                            <Card key={job.id} id={job.id} onClick={() => { GoPage(job.id) }} >
+                            <Card key={job.id} id={job.id} onClick={() => { GoPage(job.id) }} className="cursor-pointer" >
                                 <CardHeader>
                                     <CardTitle> {job.name}</CardTitle>
                                     <CardDescription>{job.info}</CardDescription>
