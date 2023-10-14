@@ -10,7 +10,7 @@ let start = async () => {
 
     for (let i = 0; i < 10; i++) {
         try {
-            await driver.get(`https://hh.ru/search/vacancy?area=2759&area=97&area=2782&area=2768&area=2769&search_field=name&search_field=company_name&search_field=description&enable_snippets=false&L_save_area=true&text=python&page=${i}`);
+            await driver.get(`https://hh.ru/search/vacancy?area=2759&area=97&area=2782&area=2768&area=2769&search_field=name&search_field=company_name&search_field=description&enable_snippets=false&L_save_area=true&text=javascript&page=${i}`);
 
             let arr = await driver.executeScript(`
                 {   let arr = [];
