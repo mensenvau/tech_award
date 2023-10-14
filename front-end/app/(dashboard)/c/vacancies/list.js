@@ -81,7 +81,8 @@ export default function Vacancies() {
                                     <SelectItem value="all">All</SelectItem>
                                     <SelectItem value="hh.ru">HH.ru</SelectItem>
                                     <SelectItem value="olx.uz">Olx.uz</SelectItem>
-                                    <SelectItem value="indeed">Indeed</SelectItem>
+                                    <SelectItem value="indeed.com">Indeed</SelectItem>
+                                    <SelectItem value="vacancy.argos.uz">Vacancy Argos</SelectItem>
                                 </SelectContent>
                             </Select>
                             <Button className="h-12 drop-shadow-md" onClick={Search} > <MagnifyingGlassIcon className="w-4 w-4 mr-2" /> Search </Button>
