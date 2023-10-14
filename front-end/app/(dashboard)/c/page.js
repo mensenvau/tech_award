@@ -1,62 +1,37 @@
 "use client"
-import { useEffect, useState } from "react"
-import { Card, CardDescription, CardHeader, CardTitle, } from "@/components/ui/card"
-import { Alert, AlertDescription, } from "@/components/ui/alert"
-import { toast } from 'react-toastify';
-import { SkeletonDemo } from "@/app/components/skeleton";
-import { BookmarkIcon } from "@heroicons/react/24/outline";
-import CallApi from "@/app/api/call"
 
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
-export default function Dashboard() {
-    const [data, setData] = useState([]);
-    const [load, setLoad] = useState(false);
-
-    let GetData = async () => {
-        let res = await CallApi.GET("info/updated");
-        if (res.status != 200) {
-            toast.error(res.message, {
-                position: "bottom-right", autoClose: 2000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, theme: "light",
-            });
-        }
-        if (res.status == 200) {
-            setData(res.data.updated || []);
-            setLoad(true);
-        }
-    }
-
-    useEffect(() => { GetData(); }, []);
+export default function Home() {
 
     return (
-        <div className="grid grid-rows-12 grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-4">
-            <div className="relative lg:col-span-8 col-span-1 mb-2">
-                <div className="w-full">
-                    {load && data.map((item) => (
-                        <Alert className='mb-2' key={item.id}>
-                            <AlertDescription>
-                                <div className="flex justify-between">
-                                    <span>{item.description}</span>
-                                    <span>
-                                        <div className="flex">
-                                            {item.status == 'new' ? <BookmarkIcon className="w-4 h-4 mr-2" /> : ""}
-                                            {item.savetime.split("T")[0]}
-                                        </div>
-                                    </span>
-                                </div>
-                            </AlertDescription>
-                        </Alert>
-                    ))}
-                    {!load && <SkeletonDemo />}
+        <>
+            <div className="light:bg-white">
+                <div className="relative isolate px-6 pt-14 lg:px-8">
+                    <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true" ></div>
+                    <div className="mx-auto max-w-3xl py-20 sm:py-35 lg:py-40">
+                        <div className="text-center">
+                            <h1 className="font-bold tracking-tight dark:text-white-600 sm:text-5xl">
+                                Let's find the dream job together!
+                            </h1>
+                            <p className="mt-6 text-lg leading-8 dark:text-slate-300 text-gray-600">
+                                Smart Jobs will help you find your job.
+                            </p>
+                        </div>
+
+                        <div className="mt-10 w-full flex items-center justify-center gap-x-6">
+                            <div className="flex grid-cols-2 w-11/12 items-center space-x-2">
+                                <Input type="email" placeholder="Enter the position or position" className="h-12 drop-shadow-md" />
+                                <Button type="submit" className="h-12 drop-shadow-md"> <MagnifyingGlassIcon className="w-4 w-4 mr-2" /> Search </Button>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-            <div className="relative lg:col-span-4 col-span-1">
-                <Card className="shadow-none">
-                    <CardHeader>
-                        <CardTitle>SMARTJOB Start #1</CardTitle>
-                        <CardDescription className="dark:text-white">Developer.UZ</CardDescription>
-                    </CardHeader>
-                </Card>
-            </div>
-        </div >
+        </>
     )
 }
+
