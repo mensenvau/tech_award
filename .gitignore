@@ -2,3 +2,5 @@
 node_modules
 intergration/telegram/td
 ./intergration/telegram/td
+intergration/telegram/config
+./intergration/telegram/config
