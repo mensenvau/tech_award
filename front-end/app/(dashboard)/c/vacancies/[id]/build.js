@@ -69,7 +69,7 @@ export default function Build() {
                                         </div>
                                     </CardContent> <br />
                                     <CardDescription className="flex justify-center	flex-col my-4">
-                                        <span><b>Matching with job requirement: </b>70%</span>
+                                        <span>Matching with job requirement: {match.matching_percentage}%</span>
                                         <progress className="w-full mt-4 progress progress-success  w-56" value={match.matching_percentage} max="100"></progress>
                                     </CardDescription>
                                 </CardHeader>

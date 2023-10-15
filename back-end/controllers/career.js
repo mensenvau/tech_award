@@ -17,6 +17,7 @@ let getCareerInfo = async (req, res, next) => {
 let getCareerWithId = async (req, res, next) => {
     try {
         let id = req.params.id;
+        console.log(id)
         let [info, faq, link, skills, areas] = await Promise.all([
             getOneRow("SELECT * FROM gen_job_info WHERE id = ?", [id]),
             getRow("SELECT * FROM gen_job_faq WHERE job_id = ?", [id]),

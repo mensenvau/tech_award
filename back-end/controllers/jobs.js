@@ -2,6 +2,8 @@ const { jobsIDError, tryAgain } = require("../database/message");
 const { getRow, getOneRow } = require("../database/mysql");
 const GPT = require("../function/gpt");
 const checkMatch = require("../function/nlp");
+const fs = require("fs");
+const path = require("path");
 
 let getJobs = async (req, res, next) => {
     try {
@@ -49,6 +51,15 @@ buildResumeWithAI = (req, res, next) => {
 
 }
 
+let saveResume = async (req, res, next) => {
+    try {
+        data = req.body
+        fs.appendFileSync(path.join(__dirname, './data', 'data.txt', data, { encoding: "utf-8" }))
+    } catch (err) {
+        return next(err);
+    }
+}
+
 module.exports = {
-    getJobs, getJobsWithId, buildResumeWithAI
+    getJobs, getJobsWithId, buildResumeWithAI, saveResume
 }

@@ -3,7 +3,7 @@ let similarityScore = require('similarity-score');
 const { getRow } = require('../database/mysql');
 
 const matchCategory = (matchScore) => {
-    if (isNaN(matchScore)) return { category: "Not-maching", matching_percentage: 0 }
+    if (isNaN(matchScore)) return { category: "not found", matching_percentage: 0 }
 
     if (matchScore >= 0 && matchScore < 30) return { category: "Low", matching_percentage: matchScore }
     if (matchScore >= 30 && matchScore < 50) return { category: "Upper low", matching_percentage: matchScore }
@@ -31,11 +31,13 @@ let reComment = (user_jobs, candidate_job, threshold) => {
         }
 
         // final match
-        let { matching_percentage, category } = matchCategory(res / matched.length * 100);
+        let { matching_percentage, category } = matchCategory((res / matched.length * 100).toFixed(2));
 
         // return matchScore
         return { score, order, size, exact, check, user_jobs, matched, matching_percentage, match, category }
     } catch (err) {
+        console.log(err)
+        return { check: [], matching_percentage: 0, category: matchCategory().category }
     }
 }
 
@@ -52,7 +54,9 @@ let checkMatch = async (jid, uid = 1) => {
     for (let i = 0; i < jobs_dt.length; i++)
         jobs.push(jobs_dt[i].name);
 
-    return reComment(jobs, users)
+    console.log(jobs, users)
+    console.log(reComment(users, jobs))
+    return reComment(users, jobs)
 }
 
 

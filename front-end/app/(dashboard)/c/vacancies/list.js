@@ -16,7 +16,7 @@ export default function Vacancies() {
     const [load, setLoad] = useState(false);
     const [input, setInput] = useState({ q: "", env: "all" });
     const router = useRouter();
-    const searchParams = useSearchParams()
+    const searchParams = useSearchParams();
 
     const handleChange = event => {
         let newData = input;
