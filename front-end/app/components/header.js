@@ -57,7 +57,7 @@ export default function Header(props) {
                                 <div className="-my-6 divide-y divide-gray-500/10">
                                     <div className="space-y-2 py-6">
                                         {navigation.map((item) => (
-                                            <Link key={item.name} href={item.href} className="-mx-3 block rounded-lg px-3 py-2 text-sm font-medium dark:text-white-600 leading-7 hover:bg-gray-50" >
+                                            <Link key={item.name} href={item.href} onClick={() => setMobileMenuOpen(false)} className="-mx-3 block rounded-lg px-3 py-2 text-sm font-medium dark:text-white-600 leading-7 hover:bg-gray-50" >
                                                 {item.name}
                                             </Link>
                                         ))}
