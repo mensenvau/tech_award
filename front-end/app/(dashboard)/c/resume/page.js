@@ -9,8 +9,16 @@ import { Input } from "@/components/ui/input";
 import { SparklesIcon } from "@heroicons/react/24/outline";
 import { toast } from "react-toastify";
 import CallApi from "@/app/api/call"
+import { useRouter } from "next/navigation";
 
 export default function Resume() {
+
+    const router = useRouter();
+    useEffect(() => {
+        let token = localStorage.getItem("token");
+        if (!token) { router.push("/sign-in"); }
+    }, [])
+
 
     const [data, setData] = useState({
         firt_name: "",
@@ -54,6 +62,7 @@ export default function Resume() {
 
     const handleChange = event => {
         let newData = data;
+        if (event.target.id == 'description') return setDesc(event.target.value);
         newData[event.target.id] = event.target.value;
         setData(newData);
     };

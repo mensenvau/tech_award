@@ -1146,3 +1146,311 @@
     [32m'    at async checkMatch (/Users/mensenvau/Projects/tech_award/back-end/function/nlp.js:44:19)'[39m
   ]
 }
+[31merror[39m: [CreateMappingConfig] uncaughtException: 401 Incorrect API key provided: sk-zhK0D****************************************p29;. You can find your API key at https://platform.openai.com/account/api-keys. 
+{
+  date: [32m'Sun Oct 15 2023 12:22:51 GMT+0500 (GMT+05:00)'[39m,
+  process: {
+    pid: [33m17494[39m,
+    uid: [33m501[39m,
+    gid: [33m20[39m,
+    cwd: [32m'/Users/mensenvau/Projects/tech_award/back-end'[39m,
+    execPath: [32m'/opt/homebrew/Cellar/node/20.8.0/bin/node'[39m,
+    version: [32m'v20.8.0'[39m,
+    argv: [
+      [32m'/opt/homebrew/Cellar/node/20.8.0/bin/node'[39m,
+      [32m'/Users/mensenvau/Projects/tech_award/back-end/app.js'[39m
+    ],
+    memoryUsage: {
+      rss: [33m67207168[39m,
+      heapTotal: [33m37273600[39m,
+      heapUsed: [33m22703624[39m,
+      external: [33m2377352[39m,
+      arrayBuffers: [33m114863[39m
+    }
+  },
+  os: {
+    loadavg: [ [33m2.45703125[39m, [33m2.220703125[39m, [33m2.26708984375[39m ],
+    uptime: [33m402433[39m
+  },
+  trace: [
+    {
+      column: [33m20[39m,
+      file: [32m'/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/error.js'[39m,
+      function: [32m'APIError.generate'[39m,
+      line: [33m36[39m,
+      method: [32m'generate'[39m,
+      native: [33mfalse[39m
+    },
+    {
+      column: [33m33[39m,
+      file: [32m'/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/core.js'[39m,
+      function: [32m'OpenAI.makeStatusError'[39m,
+      line: [33m244[39m,
+      method: [32m'makeStatusError'[39m,
+      native: [33mfalse[39m
+    },
+    {
+      column: [33m30[39m,
+      file: [32m'/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/core.js'[39m,
+      function: [32m'OpenAI.makeRequest'[39m,
+      line: [33m283[39m,
+      method: [32m'makeRequest'[39m,
+      native: [33mfalse[39m
+    },
+    {
+      column: [33m5[39m,
+      file: [32m'node:internal/process/task_queues'[39m,
+      function: [32m'process.processTicksAndRejections'[39m,
+      line: [33m95[39m,
+      method: [32m'processTicksAndRejections'[39m,
+      native: [33mfalse[39m
+    },
+    {
+      column: [33m28[39m,
+      file: [32m'/Users/mensenvau/Projects/tech_award/back-end/function/gpt.js'[39m,
+      function: [32m'async GPT'[39m,
+      line: [33m9[39m,
+      method: [1mnull[22m,
+      native: [33mfalse[39m
+    }
+  ],
+  stack: [
+    [32m'Error: 401 Incorrect API key provided: sk-zhK0D****************************************p29;. You can find your API key at https://platform.openai.com/account/api-keys.'[39m,
+    [32m'    at APIError.generate (/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/error.js:36:20)'[39m,
+    [32m'    at OpenAI.makeStatusError (/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/core.js:244:33)'[39m,
+    [32m'    at OpenAI.makeRequest (/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/core.js:283:30)'[39m,
+    [32m'    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)'[39m,
+    [32m'    at async GPT (/Users/mensenvau/Projects/tech_award/back-end/function/gpt.js:9:28)'[39m
+  ]
+}
+[31merror[39m: [Helper] uncaughtException: 401 Incorrect API key provided: sk-zhK0D****************************************p29;. You can find your API key at https://platform.openai.com/account/api-keys. 
+{
+  date: [32m'Sun Oct 15 2023 12:22:51 GMT+0500 (GMT+05:00)'[39m,
+  process: {
+    pid: [33m17494[39m,
+    uid: [33m501[39m,
+    gid: [33m20[39m,
+    cwd: [32m'/Users/mensenvau/Projects/tech_award/back-end'[39m,
+    execPath: [32m'/opt/homebrew/Cellar/node/20.8.0/bin/node'[39m,
+    version: [32m'v20.8.0'[39m,
+    argv: [
+      [32m'/opt/homebrew/Cellar/node/20.8.0/bin/node'[39m,
+      [32m'/Users/mensenvau/Projects/tech_award/back-end/app.js'[39m
+    ],
+    memoryUsage: {
+      rss: [33m67747840[39m,
+      heapTotal: [33m37797888[39m,
+      heapUsed: [33m23103424[39m,
+      external: [33m2377416[39m,
+      arrayBuffers: [33m114887[39m
+    }
+  },
+  os: {
+    loadavg: [ [33m2.45703125[39m, [33m2.220703125[39m, [33m2.26708984375[39m ],
+    uptime: [33m402433[39m
+  },
+  trace: [
+    {
+      column: [33m20[39m,
+      file: [32m'/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/error.js'[39m,
+      function: [32m'APIError.generate'[39m,
+      line: [33m36[39m,
+      method: [32m'generate'[39m,
+      native: [33mfalse[39m
+    },
+    {
+      column: [33m33[39m,
+      file: [32m'/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/core.js'[39m,
+      function: [32m'OpenAI.makeStatusError'[39m,
+      line: [33m244[39m,
+      method: [32m'makeStatusError'[39m,
+      native: [33mfalse[39m
+    },
+    {
+      column: [33m30[39m,
+      file: [32m'/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/core.js'[39m,
+      function: [32m'OpenAI.makeRequest'[39m,
+      line: [33m283[39m,
+      method: [32m'makeRequest'[39m,
+      native: [33mfalse[39m
+    },
+    {
+      column: [33m5[39m,
+      file: [32m'node:internal/process/task_queues'[39m,
+      function: [32m'process.processTicksAndRejections'[39m,
+      line: [33m95[39m,
+      method: [32m'processTicksAndRejections'[39m,
+      native: [33mfalse[39m
+    },
+    {
+      column: [33m28[39m,
+      file: [32m'/Users/mensenvau/Projects/tech_award/back-end/function/gpt.js'[39m,
+      function: [32m'async GPT'[39m,
+      line: [33m9[39m,
+      method: [1mnull[22m,
+      native: [33mfalse[39m
+    }
+  ],
+  stack: [
+    [32m'Error: 401 Incorrect API key provided: sk-zhK0D****************************************p29;. You can find your API key at https://platform.openai.com/account/api-keys.'[39m,
+    [32m'    at APIError.generate (/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/error.js:36:20)'[39m,
+    [32m'    at OpenAI.makeStatusError (/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/core.js:244:33)'[39m,
+    [32m'    at OpenAI.makeRequest (/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/core.js:283:30)'[39m,
+    [32m'    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)'[39m,
+    [32m'    at async GPT (/Users/mensenvau/Projects/tech_award/back-end/function/gpt.js:9:28)'[39m
+  ]
+}
+[31merror[39m: [SbEvent] uncaughtException: 401 Incorrect API key provided: sk-zhK0D****************************************p29;. You can find your API key at https://platform.openai.com/account/api-keys. 
+{
+  date: [32m'Sun Oct 15 2023 12:22:51 GMT+0500 (GMT+05:00)'[39m,
+  process: {
+    pid: [33m17494[39m,
+    uid: [33m501[39m,
+    gid: [33m20[39m,
+    cwd: [32m'/Users/mensenvau/Projects/tech_award/back-end'[39m,
+    execPath: [32m'/opt/homebrew/Cellar/node/20.8.0/bin/node'[39m,
+    version: [32m'v20.8.0'[39m,
+    argv: [
+      [32m'/opt/homebrew/Cellar/node/20.8.0/bin/node'[39m,
+      [32m'/Users/mensenvau/Projects/tech_award/back-end/app.js'[39m
+    ],
+    memoryUsage: {
+      rss: [33m67862528[39m,
+      heapTotal: [33m38060032[39m,
+      heapUsed: [33m23400896[39m,
+      external: [33m2377416[39m,
+      arrayBuffers: [33m114887[39m
+    }
+  },
+  os: {
+    loadavg: [ [33m2.45703125[39m, [33m2.220703125[39m, [33m2.26708984375[39m ],
+    uptime: [33m402433[39m
+  },
+  trace: [
+    {
+      column: [33m20[39m,
+      file: [32m'/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/error.js'[39m,
+      function: [32m'APIError.generate'[39m,
+      line: [33m36[39m,
+      method: [32m'generate'[39m,
+      native: [33mfalse[39m
+    },
+    {
+      column: [33m33[39m,
+      file: [32m'/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/core.js'[39m,
+      function: [32m'OpenAI.makeStatusError'[39m,
+      line: [33m244[39m,
+      method: [32m'makeStatusError'[39m,
+      native: [33mfalse[39m
+    },
+    {
+      column: [33m30[39m,
+      file: [32m'/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/core.js'[39m,
+      function: [32m'OpenAI.makeRequest'[39m,
+      line: [33m283[39m,
+      method: [32m'makeRequest'[39m,
+      native: [33mfalse[39m
+    },
+    {
+      column: [33m5[39m,
+      file: [32m'node:internal/process/task_queues'[39m,
+      function: [32m'process.processTicksAndRejections'[39m,
+      line: [33m95[39m,
+      method: [32m'processTicksAndRejections'[39m,
+      native: [33mfalse[39m
+    },
+    {
+      column: [33m28[39m,
+      file: [32m'/Users/mensenvau/Projects/tech_award/back-end/function/gpt.js'[39m,
+      function: [32m'async GPT'[39m,
+      line: [33m9[39m,
+      method: [1mnull[22m,
+      native: [33mfalse[39m
+    }
+  ],
+  stack: [
+    [32m'Error: 401 Incorrect API key provided: sk-zhK0D****************************************p29;. You can find your API key at https://platform.openai.com/account/api-keys.'[39m,
+    [32m'    at APIError.generate (/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/error.js:36:20)'[39m,
+    [32m'    at OpenAI.makeStatusError (/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/core.js:244:33)'[39m,
+    [32m'    at OpenAI.makeRequest (/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/core.js:283:30)'[39m,
+    [32m'    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)'[39m,
+    [32m'    at async GPT (/Users/mensenvau/Projects/tech_award/back-end/function/gpt.js:9:28)'[39m
+  ]
+}
+[31merror[39m: [ExitHandler] uncaughtException: 401 Incorrect API key provided: sk-zhK0D****************************************p29;. You can find your API key at https://platform.openai.com/account/api-keys. 
+{
+  date: [32m'Sun Oct 15 2023 12:22:51 GMT+0500 (GMT+05:00)'[39m,
+  process: {
+    pid: [33m17494[39m,
+    uid: [33m501[39m,
+    gid: [33m20[39m,
+    cwd: [32m'/Users/mensenvau/Projects/tech_award/back-end'[39m,
+    execPath: [32m'/opt/homebrew/Cellar/node/20.8.0/bin/node'[39m,
+    version: [32m'v20.8.0'[39m,
+    argv: [
+      [32m'/opt/homebrew/Cellar/node/20.8.0/bin/node'[39m,
+      [32m'/Users/mensenvau/Projects/tech_award/back-end/app.js'[39m
+    ],
+    memoryUsage: {
+      rss: [33m68026368[39m,
+      heapTotal: [33m38060032[39m,
+      heapUsed: [33m23484200[39m,
+      external: [33m2377416[39m,
+      arrayBuffers: [33m114887[39m
+    }
+  },
+  os: {
+    loadavg: [ [33m2.45703125[39m, [33m2.220703125[39m, [33m2.26708984375[39m ],
+    uptime: [33m402433[39m
+  },
+  trace: [
+    {
+      column: [33m20[39m,
+      file: [32m'/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/error.js'[39m,
+      function: [32m'APIError.generate'[39m,
+      line: [33m36[39m,
+      method: [32m'generate'[39m,
+      native: [33mfalse[39m
+    },
+    {
+      column: [33m33[39m,
+      file: [32m'/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/core.js'[39m,
+      function: [32m'OpenAI.makeStatusError'[39m,
+      line: [33m244[39m,
+      method: [32m'makeStatusError'[39m,
+      native: [33mfalse[39m
+    },
+    {
+      column: [33m30[39m,
+      file: [32m'/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/core.js'[39m,
+      function: [32m'OpenAI.makeRequest'[39m,
+      line: [33m283[39m,
+      method: [32m'makeRequest'[39m,
+      native: [33mfalse[39m
+    },
+    {
+      column: [33m5[39m,
+      file: [32m'node:internal/process/task_queues'[39m,
+      function: [32m'process.processTicksAndRejections'[39m,
+      line: [33m95[39m,
+      method: [32m'processTicksAndRejections'[39m,
+      native: [33mfalse[39m
+    },
+    {
+      column: [33m28[39m,
+      file: [32m'/Users/mensenvau/Projects/tech_award/back-end/function/gpt.js'[39m,
+      function: [32m'async GPT'[39m,
+      line: [33m9[39m,
+      method: [1mnull[22m,
+      native: [33mfalse[39m
+    }
+  ],
+  stack: [
+    [32m'Error: 401 Incorrect API key provided: sk-zhK0D****************************************p29;. You can find your API key at https://platform.openai.com/account/api-keys.'[39m,
+    [32m'    at APIError.generate (/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/error.js:36:20)'[39m,
+    [32m'    at OpenAI.makeStatusError (/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/core.js:244:33)'[39m,
+    [32m'    at OpenAI.makeRequest (/Users/mensenvau/Projects/tech_award/back-end/node_modules/openai/core.js:283:30)'[39m,
+    [32m'    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)'[39m,
+    [32m'    at async GPT (/Users/mensenvau/Projects/tech_award/back-end/function/gpt.js:9:28)'[39m
+  ]
+}
