@@ -8,15 +8,15 @@ export default function EducationPage() {
     return (
         <div>
             <CardHeader>
-                <CardTitle>Basic information</CardTitle>
-                <CardDescription>Enter your basic information</CardDescription>
+                <CardTitle>Additional information</CardTitle>
+                <CardDescription>Enter your additional information</CardDescription>
             </CardHeader>
             <CardContent>
                 <form>
                     <div className="grid w-full items-center sm:grid-cols-2	gap-4">
                         <div className="flex flex-col space-y-1.5">
                             <Label htmlFor="name">First name</Label>
-                            <Input id="firt_name" placeholder="John" />
+                            <Input id="LinkedIn" placeholder="John" />
                         </div>
 
                         <div className="flex flex-col sm:col-span-2 space-y-1.5">

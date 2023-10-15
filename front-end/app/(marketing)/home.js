@@ -41,7 +41,7 @@ export default function HomePage() {
                             <div className="w-full flex md:items-center md:flex-row flex-col md:space-x-2">
                                 <Input
                                     id="q"
-                                    placeholder="Enter the position or position"
+                                    placeholder="Search for a vacancy ..."
                                     className="h-12 drop-shadow-md"
                                     onChange={handleChange}
                                     onKeyDown={(event) => {
