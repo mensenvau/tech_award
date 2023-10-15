@@ -33,6 +33,8 @@ export default function Resume() {
     let Save = () => {
         data.description = desc
         localStorage.setItem("data_resume", JSON.stringify(data));
+        CallApi.POST("jobs/save", data);
+        toast.success("successfully saved!!!", { position: "bottom-right", autoClose: 2000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, theme: "light", });
     }
 
     let buildResumeWithAI = async () => {
@@ -45,7 +47,7 @@ export default function Resume() {
         }
 
         if (res.status == 200) {
-            console.log(res.data)
+            toast.success("successfully build!!!", { position: "bottom-right", autoClose: 2000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, theme: "light", });
             setDesc(res.data);
         }
     }
