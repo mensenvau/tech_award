@@ -42,7 +42,7 @@ let signUp = async (req, res, next) => {
 
         delete user.password;
         return res.success({
-            token: encode(user.id),
+            token: encode(user),
             user
         });
 
