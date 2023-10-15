@@ -1,19 +1,61 @@
 "use client"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@radix-ui/react-menu";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { SparklesIcon } from "@heroicons/react/24/outline";
-
+import { toast } from "react-toastify";
+import CallApi from "@/app/api/call"
 
 export default function Resume() {
 
-    let Save = () => {
+    const [data, setData] = useState({
+        firt_name: "",
+        last_name: "",
+        phone_numer: "",
+        email: "",
+        description: "",
+        linkedin: "",
+        telegram: ""
+    });
 
+    const [desc, setDesc] = useState()
+
+    useEffect(() => {
+        let dt = JSON.parse(localStorage.getItem("data_resume"));
+        setDesc(dt.description)
+        if (dt) setData(dt);
+    }, [])
+
+    let Save = () => {
+        data.description = desc
+        localStorage.setItem("data_resume", JSON.stringify(data));
     }
+
+    let buildResumeWithAI = async () => {
+        let res = await CallApi.POST(`jobs/ai`, {
+            text: data.description
+        });
+
+        if (res.status != 200) {
+            toast.error(res.message, { position: "bottom-right", autoClose: 2000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, theme: "light", });
+        }
+
+        if (res.status == 200) {
+            console.log(res.data)
+            setDesc(res.data);
+        }
+    }
+
+    const handleChange = event => {
+        let newData = data;
+        newData[event.target.id] = event.target.value;
+        setData(newData);
+    };
+
 
     return (
         <div className="w-full flex justify-center">
@@ -29,34 +71,34 @@ export default function Resume() {
                         <div className="grid w-full items-center sm:grid-cols-2	gap-4">
                             <div className="flex flex-col space-y-1.5">
                                 <Label htmlFor="firt_name">First name</Label>
-                                <Input id="firt_name" placeholder="John" />
+                                <Input id="firt_name" placeholder="John" defaultValue={data.firt_name} onChange={handleChange} />
                             </div>
                             <div className="flex flex-col space-y-1.5">
                                 <Label htmlFor="last_name">Last name</Label>
-                                <Input id="last_name" placeholder="Doe" />
+                                <Input id="last_name" placeholder="Doe" defaultValue={data.last_name} onChange={handleChange} />
                             </div>
                             <div className="flex flex-col space-y-1.5">
                                 <Label htmlFor="phone_numer">Phone number</Label>
-                                <Input id="phone_numer" placeholder="+998995441550" />
+                                <Input id="phone_numer" placeholder="+998995441550" defaultValue={data.phone_numer} onChange={handleChange} />
                             </div>
                             <div className="flex flex-col space-y-1.5">
                                 <Label htmlFor="email">Email address</Label>
-                                <Input id="email" placeholder="JohnDoe@google.com" />
+                                <Input id="email" placeholder="JohnDoe@google.com" defaultValue={data.email} onChange={handleChange} />
                             </div>
                             <div className="flex flex-col sm:col-span-2 space-y-1.5">
                                 <div className="flex justify-between">
                                     <Label htmlFor="name">Describe yourself</Label>
-                                    <Button variant="outline" ><SparklesIcon className="w-4 h-4 mr-1" /> Build with AI </Button>
+                                    <Button variant="outline" onClick={buildResumeWithAI} ><SparklesIcon className="w-4 h-4 mr-1" /> Build with AI </Button>
                                 </div>
-                                <Textarea id="description" placeholder="Type your message here." className="min-h-[80px]" />
+                                <Textarea id="description" placeholder="Type your message here." className="min-h-[80px]" value={desc} defaultValue={desc} onChange={handleChange} />
                             </div>
                             <div className="flex flex-col space-y-1.5">
-                                <Label htmlFor="name">LinkedIn</Label>
-                                <Input id="linked_in" placeholder="Username" />
+                                <Label htmlFor="linkedin">LinkedIn</Label>
+                                <Input id="linkedin" placeholder="Username" defaultValue={data.linkedin} onChange={handleChange} />
                             </div>
                             <div className="flex flex-col space-y-1.5">
-                                <Label htmlFor="name">Telegram</Label>
-                                <Input id="linked_in" placeholder="Username" />
+                                <Label htmlFor="telegram">Telegram</Label>
+                                <Input id="telegram" placeholder="Username" defaultValue={data.telegram} onChange={handleChange} />
                             </div>
                         </div>
                     </CardContent>

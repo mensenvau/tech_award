@@ -1,7 +1,7 @@
 
 "use client"
 
-import { useParams, useRouter } from "next/navigation"
+import { useParams } from "next/navigation"
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { SkeletonDemo } from "@/app/components/skeleton";
@@ -9,12 +9,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { LightningBoltIcon } from "@radix-ui/react-icons";
 import CallApi from "@/app/api/call"
 import parse from 'html-react-parser';
+import { Badge } from "@/components/ui/badge";
 
 export default function Build() {
 
     const [data, setData] = useState([]);
+    const [match, setMatch] = useState([]);
+
     const [load, setLoad] = useState(false);
-    const router = useRouter();
     let params = useParams();
 
     let GetWithID = async () => {
@@ -25,6 +27,7 @@ export default function Build() {
         }
         if (res.status == 200) {
             setData(res.data.jobs || []);
+            setMatch(res.data.match || []);
             setLoad(true);
         }
     }
@@ -57,9 +60,18 @@ export default function Build() {
                         <div className="sm:col-span-1 w-full">
                             <Card>
                                 <CardHeader>
-                                    <CardTitle>Best Match</CardTitle>
-                                    <CardDescription>45%</CardDescription>
-                                    <CardContent className="p-0"> which one - a - b</CardContent>
+                                    <CardTitle className="mb-2">{match.category} match</CardTitle>
+                                    <CardContent className="p-0">
+                                        <div className="grid grid-cols-3 gap-2">
+                                            {match.check.map((item) => (
+                                                <Badge className={item.is ? 'text-green-600' : 'text-rose-600'} variant="secondary">{item.name}</Badge>
+                                            ))}
+                                        </div>
+                                    </CardContent> <br />
+                                    <CardDescription className="flex justify-center	flex-col my-4">
+                                        <span><b>Matching with job requirement: </b>70%</span>
+                                        <progress className="w-full mt-4 progress progress-success  w-56" value={match.matching_percentage} max="100"></progress>
+                                    </CardDescription>
                                 </CardHeader>
                             </Card>
                         </div>

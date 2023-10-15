@@ -137,7 +137,6 @@ export function SignUp({ className, ...props }) {
 
     const handleChange = event => {
         let newData = data;
-        console.log(event.target.id)
         newData[event.target.id] = event.target.value;
         setData(newData);
     };

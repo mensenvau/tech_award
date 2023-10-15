@@ -10,5 +10,6 @@ module.exports = {
     alreadyEMessage: "This email already verified.",
     genIDError: "Sorry id error.",
     jobsIDError: "Sorry jobs id error.",
+    tryAgain: "pls try again!"
 
 }

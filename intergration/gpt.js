@@ -1,7 +1,7 @@
 require("dotenv")
 const fetch = require('node-fetch');
 
-const OPENAI_API_KEY = "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";
+const OPENAI_API_KEY = "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";
 const endpoint = 'https://api.openai.com/v1/chat/completions';
 
 const requestBody = {
@@ -22,7 +22,7 @@ fetch(endpoint, {
 })
     .then((response) => response.json())
     .then((data) => {
-        console.log(data);
+        if (data.error) return callbackify(0, 1)
     })
     .catch((error) => {
         console.error('Error:', error);

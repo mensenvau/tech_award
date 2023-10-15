@@ -1,5 +1,7 @@
-const { jobsIDError } = require("../database/message");
+const { jobsIDError, tryAgain } = require("../database/message");
 const { getRow, getOneRow } = require("../database/mysql");
+const GPT = require("../function/gpt");
+const checkMatch = require("../function/nlp");
 
 let getJobs = async (req, res, next) => {
     try {
@@ -16,19 +18,37 @@ let getJobs = async (req, res, next) => {
 }
 
 let getJobsWithId = async (req, res, next) => {
+
     try {
         let id = req.params.id;
         let [jobs] = await Promise.all([
             getOneRow("SELECT * FROM jobs_list WHERE id = ?", [id]),
         ]);
-
         if (!jobs) throw new Error(jobsIDError);
-        res.success({ jobs });
+        res.success({ jobs, match: await checkMatch(id,) });
     } catch (err) {
         return next(err);
     }
 }
 
+buildResumeWithAI = (req, res, next) => {
+    try {
+        let text = req.body.text;
+        GPT(text, (err, data) => {
+            try {
+                if (err) return next(new Error(tryAgain));
+                res.success(data);
+            } catch (err) {
+                return next(new Error(tryAgain));
+            }
+        })
+    }
+    catch (err) {
+        return next(err);
+    }
+
+}
+
 module.exports = {
-    getJobs, getJobsWithId
+    getJobs, getJobsWithId, buildResumeWithAI
 }
