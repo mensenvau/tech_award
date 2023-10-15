@@ -8,7 +8,7 @@ let loginTelegram = async (client) => {
     /* start login part here!  */
     await client.login(() => ({
         getPhoneNumber: retry => retry ?
-            Promise.reject('Invalid phone number') : '+17479448255', // Promise.resolve(read("Phone number Pls: ")),
+            Promise.reject('Invalid phone number') : '+998995441550', // Promise.resolve(read("Phone number Pls: ")),
         getAuthCode: retry => retry ?
             Promise.resolve(read("Invalid code again Pls: ")) : Promise.resolve(read("Code Pls: ")),
         getPassword: (passwordHint, retry) => retry ?
