@@ -83,7 +83,7 @@ export default function Build() {
                                                 data.faq.map(item => (
                                                     <AccordionItem value={"item-" + item.id} key={item.id}>
                                                         <AccordionTrigger>{item.question}</AccordionTrigger>
-                                                        <AccordionContent>s
+                                                        <AccordionContent>
                                                             {item.answer}
                                                         </AccordionContent>
                                                     </AccordionItem>

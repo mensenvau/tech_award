@@ -26,7 +26,7 @@ export default function Resume() {
 
     useEffect(() => {
         let dt = JSON.parse(localStorage.getItem("data_resume"));
-        setDesc(dt.description || "")
+        setDesc(dt?.description || "")
         if (dt) setData(dt);
     }, [])
 
