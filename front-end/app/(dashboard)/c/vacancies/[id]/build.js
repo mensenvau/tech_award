@@ -45,7 +45,7 @@ export default function Build() {
                                 <CardHeader>
                                     <CardTitle className="flex">
                                         <h5 className="text-3xl">{data.name}</h5>
-                                        <a target="_blank" href={data.link} className="ml-auto flex rounded-md px-3 py-2 text-sm font-medium text-white shadow-sm bg-gray-950 dark:bg-sky-700" >
+                                        <a target="_blank" href={data.link} className="max-h-9 ml-auto flex rounded-md px-3 py-2 text-sm font-medium text-white shadow-sm bg-gray-950 dark:bg-sky-700" >
                                             Applay <LightningBoltIcon className="h-5 w-5 ml-1" aria-hidden="true" />
                                         </a>
                                     </CardTitle>

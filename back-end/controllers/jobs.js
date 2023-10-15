@@ -5,7 +5,6 @@ let getJobs = async (req, res, next) => {
     try {
         let q = `%${req.query.q || ''}%`
         let env = req.query.env
-        console.log(env)
         if (env == 'all')
             return res.success({ jobs: await getRow("SELECT id,name,info,country FROM jobs_list WHERE name like ? ORDER BY source LIMIT 100", [q]) });
 

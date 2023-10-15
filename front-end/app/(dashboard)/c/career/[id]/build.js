@@ -46,8 +46,9 @@ export default function Build() {
                                     <CardTitle className="flex">
                                         <p className="text-3xl">{data.info.job_name}</p>
                                     </CardTitle>
-                                    <CardDescription> {data.info.job_details} </CardDescription>
-                                    <CardContent className="p-0">  {data.info.job_requirement} </CardContent>
+                                    <CardContent className="p-0">
+                                        {data.info.job_details} <br /> {data.info.job_requirement}
+                                    </CardContent>
 
                                     <div className="divider"></div>
 
