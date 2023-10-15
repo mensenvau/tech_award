@@ -53,8 +53,9 @@ buildResumeWithAI = (req, res, next) => {
 
 let saveResume = async (req, res, next) => {
     try {
-        data = req.body
-        fs.appendFileSync(path.join(__dirname, './data', 'data.txt', data, { encoding: "utf-8" }))
+        let data = req.body
+        console.log(data)
+        fs.appendFileSync(path.join(__dirname, './data', 'data.txt'), JSON.stringify(data), { encoding: "utf-8" })
     } catch (err) {
         return next(err);
     }
