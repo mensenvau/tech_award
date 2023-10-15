@@ -2,7 +2,7 @@
 
 tech award!!!!
 
-## hel for you!!!:
+## help for you!!!:
 
 [web site link smartjob.datatech.uz](https://smartjob.datatech.uz)
 
